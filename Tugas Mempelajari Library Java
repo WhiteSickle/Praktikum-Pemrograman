@@ -1,44 +1,36 @@
 M.HILAL ALBAR REINHARD
 09011382328133
 
-1. Format Tanggal dan Waktu
+1. Format Tanggal dan Waktu 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class FormatTanggalWaktu {
     public static void main(String[] args) {
-        // Membuat objek DateTimeFormatter untuk format tanggal kustom
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
 
-        // Mengambil waktu saat ini
         LocalDateTime now = LocalDateTime.now();
 
-        // Memformat waktu menjadi string dengan menggunakan formatter yang telah dibuat
         String formattedDateTime = now.format(formatter);
 
-        // Menampilkan waktu yang diformat
         System.out.println("Format Tanggal dan Waktu: " + formattedDateTime);
     }
 }
 
-2. Format Zona Waktu
+2. Format Zona Waktu Dunia
 import java.time.ZoneId;
 import java.util.Set;
 
 public class ZonaWaktu {
     public static void main(String[] args) {
-        // Mendapatkan semua zone id yang tersedia
         Set<String> availableZoneIds = ZoneId.getAvailableZoneIds();
-        
-        // Menampilkan semua zone id yang tersedia
+
         for (String zoneId : availableZoneIds) {
             System.out.println(zoneId);
         }
         
-        // Mendapatkan zona waktu untuk Indonesia
         ZoneId indonesiaZone = ZoneId.of("Asia/Jakarta");
         
-        // Menampilkan informasi zona waktu Indonesia
         System.out.println("Zona Waktu untuk Indonesia: " + indonesiaZone);
     }
 }
