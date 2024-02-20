@@ -1,9 +1,28 @@
+1. Format Tanggal dan Waktu
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
+public class FormatTanggalWaktu {
+    public static void main(String[] args) {
+        // Membuat objek DateTimeFormatter untuk format tanggal kustom
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
 
+        // Mengambil waktu saat ini
+        LocalDateTime now = LocalDateTime.now();
+
+        // Memformat waktu menjadi string dengan menggunakan formatter yang telah dibuat
+        String formattedDateTime = now.format(formatter);
+
+        // Menampilkan waktu yang diformat
+        System.out.println("Format Tanggal dan Waktu: " + formattedDateTime);
+    }
+}
+
+2. Format Zona Waktu
 import java.time.ZoneId;
 import java.util.Set;
 
-public class Zona {
+public class ZonaWaktu {
     public static void main(String[] args) {
         // Mendapatkan semua zone id yang tersedia
         Set<String> availableZoneIds = ZoneId.getAvailableZoneIds();
@@ -20,3 +39,4 @@ public class Zona {
         System.out.println("Zona Waktu untuk Indonesia: " + indonesiaZone);
     }
 }
+
