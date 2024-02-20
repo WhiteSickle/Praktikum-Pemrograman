@@ -17,21 +17,18 @@ public class FormatTanggalWaktu {
     }
 }
 
-2. Format Zona Waktu Dunia
+2. Format Zona Waktu
 import java.time.ZoneId;
-import java.util.Set;
 
 public class ZonaWaktu {
     public static void main(String[] args) {
-        Set<String> availableZoneIds = ZoneId.getAvailableZoneIds();
 
-        for (String zoneId : availableZoneIds) {
-            System.out.println(zoneId);
-        }
-        
-        ZoneId indonesiaZone = ZoneId.of("Asia/Jakarta");
-        
-        System.out.println("Zona Waktu untuk Indonesia: " + indonesiaZone);
+        ZoneId defaultZone = ZoneId.systemDefault();
+        System.out.println("Default Zone: " + defaultZone);
+
+        System.out.println("Available Zone IDs:");
+        ZoneId.getAvailableZoneIds().forEach(System.out::println);
     }
 }
+
 
