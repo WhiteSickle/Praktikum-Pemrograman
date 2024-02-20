@@ -1,0 +1,22 @@
+
+
+import java.time.ZoneId;
+import java.util.Set;
+
+public class Zona {
+    public static void main(String[] args) {
+        // Mendapatkan semua zone id yang tersedia
+        Set<String> availableZoneIds = ZoneId.getAvailableZoneIds();
+        
+        // Menampilkan semua zone id yang tersedia
+        for (String zoneId : availableZoneIds) {
+            System.out.println(zoneId);
+        }
+        
+        // Mendapatkan zona waktu untuk Indonesia
+        ZoneId indonesiaZone = ZoneId.of("Asia/Jakarta");
+        
+        // Menampilkan informasi zona waktu Indonesia
+        System.out.println("Zona Waktu untuk Indonesia: " + indonesiaZone);
+    }
+}
